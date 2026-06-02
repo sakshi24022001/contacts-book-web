@@ -1,7 +1,7 @@
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import {
-  Box, Button, Typography, Paper, Grid, Stack,
-  Divider, Chip, Alert, Collapse,
+  Box, Button, Typography, Paper, Stack,
+  Divider, Alert, Collapse,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EditIcon from '@mui/icons-material/Edit';

@@ -1,11 +1,10 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Box, Button, TextField, InputAdornment, Typography,
   Table, TableBody, TableCell, TableContainer, TableHead,
-  TableRow, Paper, Stack, IconButton, Tooltip, Chip,
-  useMediaQuery, useTheme, Card, CardContent, CardActionArea,
-  Divider, ToggleButton, ToggleButtonGroup,
+  TableRow, Paper, Stack, IconButton, Chip,
+  useMediaQuery, useTheme, Card, CardContent, CardActionArea, ToggleButton, ToggleButtonGroup,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
@@ -17,7 +16,6 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { useContactsStore } from '../store/contactsStore';
 import { useFilteredContacts } from '../hooks/useFilteredContacts';
-import type {TagLabel } from '../types/contact';
 import { TagChip } from '../components/ui/TagChip';
 import { ContactAvatar } from '../components/ui/ContactAvatar';
 import { EmptyState } from '../components/ui/EmptyState';
