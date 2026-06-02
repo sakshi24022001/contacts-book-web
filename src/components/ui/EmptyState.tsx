@@ -35,10 +35,10 @@ export function EmptyState({ type }: EmptyStateProps) {
           }}
         />
         <PersonAddAlt1Icon sx={{ fontSize: 48, color: 'primary.main', mt: -11, opacity: 0.5 }} />
-        <Typography variant="h5" fontWeight={600} color="text.primary" mt={1}>
+        <Typography variant="h5" sx={{fontWeight:600, mt:1}} color="text.primary">
           No contacts yet
         </Typography>
-        <Typography variant="body2" color="text.secondary" textAlign="center" maxWidth={280}>
+        <Typography variant="body2" color="text.secondary" sx={{ textAlign:"center", maxWidth:280 }}>
           Your contacts book is empty. Add your first contact to get started.
         </Typography>
         <Button
@@ -65,10 +65,10 @@ export function EmptyState({ type }: EmptyStateProps) {
       }}
     >
       <SearchOffIcon sx={{ fontSize: 48, color: 'text.secondary', opacity: 0.4 }} />
-      <Typography variant="h6" fontWeight={600} color="text.secondary">
+      <Typography variant="h6" sx={{fontWeight:600}} color="text.secondary">
         No results found
       </Typography>
-      <Typography variant="body2" color="text.secondary" textAlign="center">
+      <Typography variant="body2" color="text.secondary" sx={{textAlign:"center"}}>
         Try adjusting your search or clearing the filters.
       </Typography>
     </Box>

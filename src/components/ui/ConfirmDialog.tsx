@@ -20,12 +20,18 @@ export function ConfirmDialog({
 }: ConfirmDialogProps) {
   return (
     <Dialog
-      open={open}
-      onClose={onCancel}
-      maxWidth="xs"
-      fullWidth
-      PaperProps={{ sx: { borderRadius: 3, p: 1 } }}
-    >
+        open={open}
+        onClose={onCancel}
+        maxWidth="xs"
+        fullWidth
+        slotProps={{
+          paper: {
+            sx: {
+              borderRadius: 3,
+              p: 1,
+            },
+          },
+        }}>
       <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1.5, pb: 1 }}>
         {dangerous && (
           <WarningAmberIcon sx={{ color: 'error.main', fontSize: 22 }} />

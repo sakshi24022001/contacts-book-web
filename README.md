@@ -93,7 +93,7 @@ GitHub Repository:
 
 ### UI
 
-* Material UI v5
+* Material UI v9
 * Emotion Styling
 * DM Sans
 * DM Serif Display

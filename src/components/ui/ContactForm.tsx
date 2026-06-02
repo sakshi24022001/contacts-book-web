@@ -25,7 +25,7 @@ export function ContactForm({ form, disabled = false }: ContactFormProps) {
     <Box>
       <Grid container spacing={2.5}>
         {/* First Name */}
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs:12, sm:6 }}>
           <TextField
             label="First Name *"
             fullWidth
@@ -35,14 +35,16 @@ export function ContactForm({ form, disabled = false }: ContactFormProps) {
             error={touched.firstName && !!errors.firstName}
             helperText={touched.firstName && errors.firstName}
             disabled={disabled}
-            inputProps={{
-              maxLength: 50,
-            }}
+            slotProps={{
+                htmlInput: {
+                  maxLength: 50,
+                },
+              }}
           />
         </Grid>
 
         {/* Last Name */}
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs:12, sm:6 }}>
           <TextField
             label="Last Name"
             fullWidth
@@ -50,14 +52,16 @@ export function ContactForm({ form, disabled = false }: ContactFormProps) {
             onChange={(e) => handleChange('lastName', e.target.value)}
             onBlur={() => handleBlur('lastName')}
             disabled={disabled}
-            inputProps={{
-              maxLength: 50,
-            }}
+           slotProps={{
+                htmlInput: {
+                  maxLength: 50,
+                },
+              }}
           />
         </Grid>
 
         {/* Email */}
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs:12, sm:6 }}>
           <TextField
             label="Email *"
             type="email"
@@ -70,14 +74,16 @@ export function ContactForm({ form, disabled = false }: ContactFormProps) {
               touched.email && (errors.email || errors.duplicate)
             }
             disabled={disabled}
-            inputProps={{
-              maxLength: 50,
-            }}
+            slotProps={{
+                htmlInput: {
+                  maxLength: 50,
+                },
+              }}
           />
         </Grid>
 
         {/* Phone */}
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs:12, sm:6 }}>
           <TextField
             label="Phone"
             fullWidth
@@ -88,28 +94,32 @@ export function ContactForm({ form, disabled = false }: ContactFormProps) {
             helperText={touched.phone && errors.phone}
             disabled={disabled}
             placeholder="+91 98765 43210"
-             inputProps={{
-              maxLength: 20,
-            }}
+            slotProps={{
+                htmlInput: {
+                  maxLength: 20,
+                },
+              }}
           />
         </Grid>
 
         {/* Company */}
-        <Grid item xs={12}>
+        <Grid size={{ xs:12, sm:6}}>
           <TextField
             label="Company"
             fullWidth
             value={values.company}
             onChange={(e) => handleChange('company', e.target.value)}
             disabled={disabled}
-             inputProps={{
-              maxLength: 100,
-            }}
+            slotProps={{
+                htmlInput: {
+                  maxLength: 100,
+                },
+              }}
           />
         </Grid>
 
         {/* Tags multi-select */}
-        <Grid item xs={12}>
+        <Grid size={{ xs:12, sm:6}}>
           <FormControl fullWidth size="small">
             <InputLabel>Tags</InputLabel>
             <Select
@@ -140,7 +150,7 @@ export function ContactForm({ form, disabled = false }: ContactFormProps) {
         </Grid>
 
         {/* Notes */}
-        <Grid item xs={12}>
+        <Grid size={{ xs:12}}>
           <TextField
             label="Notes"
             fullWidth
@@ -150,8 +160,10 @@ export function ContactForm({ form, disabled = false }: ContactFormProps) {
             value={values.notes}
             onChange={(e) => handleChange('notes', e.target.value)}
             disabled={disabled}
-             inputProps={{
-              maxLength: 100,
+            slotProps={{
+              htmlInput: {
+                maxLength: 100,
+              },
             }}
             helperText={`${values.notes.length}/500`}
           />
