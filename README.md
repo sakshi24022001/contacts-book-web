@@ -2,8 +2,6 @@
 
 A responsive Contacts Book Single Page Application built with React, TypeScript, Vite, Material UI, and Zustand.
 
-
-
 The application allows users to create, view, update, delete, search, filter, and manage contacts entirely on the client side without a backend.
 
 ---
@@ -12,7 +10,7 @@ The application allows users to create, view, update, delete, search, filter, an
 
 Add deployment URL here:
 
-`https://your-vercel-or-netlify-url.com`
+`https://contacts-book-web.vercel.app/`
 
 ---
 
@@ -20,7 +18,7 @@ Add deployment URL here:
 
 GitHub Repository:
 
-`https://github.com/sakshi24022001/contacts-book`
+`https://github.com/sakshi24022001/contacts-book-web`
 
 ---
 
@@ -192,7 +190,7 @@ src
 ### Clone Repository
 
 ```bash
-git clone https://github.com/sakshi24022001/contacts-book.git
+git clone https://github.com/sakshi24022001/contacts-book-web
 
 cd contacts-book
 ```
