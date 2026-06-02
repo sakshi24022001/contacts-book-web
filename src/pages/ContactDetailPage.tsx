@@ -142,7 +142,6 @@ export function ContactDetailPage() {
         <Box
           sx={{
             height: 72,
-            background: 'linear-gradient(135deg, #0D1642 0%, #1A237E 60%, #3949AB 100%)',
           }}
         />
 
