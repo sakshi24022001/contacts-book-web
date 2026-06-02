@@ -76,13 +76,15 @@ export const theme = createTheme({
           textTransform: 'none',
           borderRadius: 8,
           padding: '8px 20px',
-        },
-        containedPrimary: {
-          background: 'linear-gradient(135deg, #1A237E 0%, #3949AB 100%)',
-          boxShadow: '0 2px 8px rgba(26,35,126,0.25)',
-          '&:hover': {
-            background: 'linear-gradient(135deg, #0D1642 0%, #1A237E 100%)',
-            boxShadow: '0 4px 12px rgba(26,35,126,0.35)',
+
+          '&.MuiButton-containedPrimary': {
+            background: 'linear-gradient(135deg, #1A237E 0%, #3949AB 100%)',
+            boxShadow: '0 2px 8px rgba(26,35,126,0.25)',
+
+            '&:hover': {
+              background: 'linear-gradient(135deg, #0D1642 0%, #1A237E 100%)',
+              boxShadow: '0 4px 12px rgba(26,35,126,0.35)',
+            },
           },
         },
       },

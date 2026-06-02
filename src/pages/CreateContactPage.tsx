@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import {
-  Box, Button, Typography, Paper, Stack, Alert, Divider,
+  Box, Button, Typography, Paper, Divider,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SaveIcon from '@mui/icons-material/Save';
@@ -9,7 +9,7 @@ import { useContactsStore } from '../store/contactsStore';
 import { ContactForm } from '../components/ui/ContactForm';
 import { ConfirmDialog } from '../components/ui/ConfirmDialog';
 import { useState, useEffect } from 'react';
-
+import { Stack } from '@mui/material';
 export function CreateContactPage() {
   const navigate = useNavigate();
   const addContact = useContactsStore((s) => s.addContact);
@@ -70,7 +70,7 @@ export function CreateContactPage() {
           >
             New Contact
           </Typography>
-          <Typography variant="body2" color="text.secondary" mt={0.5}>
+          <Typography variant="body2" color="text.secondary" sx={{mt:0.5}}>
             Fill in the details below
           </Typography>
         </Box>
@@ -84,7 +84,7 @@ export function CreateContactPage() {
 
         <Divider sx={{ my: 3 }} />
 
-        <Stack direction="row" justifyContent="flex-end" gap={1.5}>
+        <Stack direction="row" sx={{gap:1.5}}>
           <Button variant="outlined" color="inherit" onClick={handleBack}>
             Cancel
           </Button>

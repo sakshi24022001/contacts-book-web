@@ -1,16 +1,3 @@
-/**
- * State Management Choice: Zustand
- *
- * Chosen over React Context because:
- * 1. No provider wrapping required — cleaner component tree.
- * 2. Fine-grained subscriptions — components only re-render when their
- *    specific slice of state changes, avoiding the blanket re-renders
- *    Context causes on every update.
- * 3. Actions live alongside state in one place, making the store
- *    self-documenting and easy to test in isolation.
- * 4. Zero boilerplate compared to Context + useReducer patterns.
- */
-
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';

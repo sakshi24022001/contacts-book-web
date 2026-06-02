@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { AppBar, Toolbar, Typography, Box, Container, useTheme } from '@mui/material';
+import type { ReactNode } from 'react';
+import { AppBar, Toolbar, Typography, Box, Container } from '@mui/material';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import { Link } from 'react-router-dom';
 
@@ -8,8 +8,7 @@ interface AppLayoutProps {
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
-  const theme = useTheme();
-
+  
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
       <AppBar

@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import {
-  Box, Button, Typography, Paper, Stack, Divider, Alert,
+  Box, Button, Paper, Stack, Divider, Alert,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SaveIcon from '@mui/icons-material/Save';
@@ -11,7 +11,7 @@ import { ContactForm } from '../components/ui/ContactForm';
 import { ConfirmDialog } from '../components/ui/ConfirmDialog';
 import { useEffect, useState } from 'react';
 import type { ContactFormValues } from '../types/contact';
-
+import { Typography } from '@mui/material';
 export function EditContactPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -99,7 +99,7 @@ export function EditContactPage() {
           >
             Edit Contact
           </Typography>
-          <Typography variant="body2" color="text.secondary" mt={0.5}>
+          <Typography variant="body2" color="text.secondary" sx={{mt:0.5}}>
             {contact.firstName} {contact.lastName}
           </Typography>
         </Box>
@@ -113,7 +113,7 @@ export function EditContactPage() {
 
         <Divider sx={{ my: 3 }} />
 
-        <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" gap={1.5}>
+        <Stack direction={{ xs: 'column', sm: 'row' }} sx={{gap:1.5}}>
           <Button
             variant="outlined"
             color="error"
@@ -122,7 +122,7 @@ export function EditContactPage() {
           >
             Delete Contact
           </Button>
-          <Stack direction="row" gap={1.5}>
+          <Stack direction="row" sx={{gap:1.5}}>
             <Button variant="outlined" color="inherit" onClick={handleBack}>
               Cancel
             </Button>
