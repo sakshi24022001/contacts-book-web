@@ -1,9 +1,9 @@
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import {
-  Box, Button, Typography, Paper, Stack,
+  Box, Button, Paper, Stack,
   Divider, Alert, Collapse,
 } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'; 
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from "@mui/icons-material/Delete";
 import EmailIcon from '@mui/icons-material/Email';
@@ -17,7 +17,7 @@ import { ContactAvatar } from '../components/ui/ContactAvatar';
 import { TagChip } from '../components/ui/TagChip';
 import { ConfirmDialog } from '../components/ui/ConfirmDialog';
 import { useState, useEffect } from 'react';
-
+import Typography from '@mui/material/Typography';
 function DetailRow({
   icon,
   label,
@@ -38,7 +38,6 @@ function DetailRow({
           bgcolor: '#EEF2FF',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
           flexShrink: 0,
           mt: 0.25,
         }}
@@ -46,11 +45,11 @@ function DetailRow({
         {icon}
       </Box>
       <Box>
-        <Typography variant="caption" color="text.secondary" fontWeight={600} sx={{ textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block' }}>
+        <Typography variant="caption" color="text.secondary" sx={{ textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block' }}>
           {label}
         </Typography>
         {typeof value === 'string' ? (
-          <Typography variant="body1" fontWeight={500} sx={{ wordBreak: 'break-all' }}>
+          <Typography variant="body1"  sx={{ wordBreak: 'break-all' }}>
             {value}
           </Typography>
         ) : (
@@ -160,11 +159,11 @@ export function ContactDetailPage() {
               <ContactAvatar firstName={contact.firstName} lastName={contact.lastName} size={72} />
             </Box>
             <Box sx={{ pb: 0.5 }}>
-              <Typography variant="h4" fontWeight={700} lineHeight={1.1}>
+              <Typography variant="h4">
                 {contact.firstName} {contact.lastName}
               </Typography>
               {contact.company && (
-                <Typography variant="body2" color="text.secondary" mt={0.25}>
+                <Typography variant="body2" color="text.secondary" sx={{mt:0.25}}>
                   {contact.company}
                 </Typography>
               )}
@@ -204,7 +203,7 @@ export function ContactDetailPage() {
                 icon={<NotesIcon sx={{ fontSize: 18, color: 'primary.main' }} />}
                 label="Notes"
                 value={
-                  <Typography variant="body1" fontWeight={400} sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.65 }}>
+                  <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.65 }}>
                     {contact.notes}
                   </Typography>
                 }
@@ -220,7 +219,7 @@ export function ContactDetailPage() {
           <Divider sx={{ my: 3 }} />
 
           {/* Actions */}
-          <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" gap={1.5}>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
             <Button
               variant="outlined"
               color="error"

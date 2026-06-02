@@ -72,7 +72,7 @@ export function ContactListPage() {
           >
             All Contacts
           </Typography>
-          <Typography variant="body2" color="text.secondary" mt={0.5}>
+          <Typography variant="body2" color="text.secondary" sx={{mt:0.5}}>
             {contacts.length} total · {filtered.length} shown
           </Typography>
         </Box>
@@ -106,19 +106,29 @@ export function ContactListPage() {
             size="small"
             value={filters.search}
             onChange={handleSearchChange}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon sx={{ color: 'text.secondary', fontSize: 20 }} />
-                </InputAdornment>
-              ),
-              endAdornment: filters.search && (
-                <InputAdornment position="end">
-                  <IconButton size="small" onClick={() => setSearch('')}>
-                    <ClearIcon fontSize="small" />
-                  </IconButton>
-                </InputAdornment>
-              ),
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon
+                      sx={{
+                        color: 'text.secondary',
+                        fontSize: 20,
+                      }}
+                    />
+                  </InputAdornment>
+                ),
+                endAdornment: filters.search ? (
+                  <InputAdornment position="end">
+                    <IconButton
+                      size="small"
+                      onClick={() => setSearch('')}
+                    >
+                      <ClearIcon fontSize="small" />
+                    </IconButton>
+                  </InputAdornment>
+                ) : undefined,
+              },
             }}
           />
 
@@ -133,7 +143,7 @@ export function ContactListPage() {
           >
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mr: 0.5 }}>
               <FilterListIcon sx={{ fontSize: 16, color: 'text.secondary' }} />
-              <Typography variant="caption" color="text.secondary" fontWeight={600} sx={{ letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+              <Typography variant="caption" color="text.secondary" sx={{ letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight:600}}>
                 Tags
               </Typography>
             </Box>
@@ -230,7 +240,7 @@ function DesktopTable({ contacts }: { contacts: ReturnType<typeof useFilteredCon
               <TableCell>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                   <ContactAvatar firstName={contact.firstName} lastName={contact.lastName} size={34} />
-                  <Typography variant="body2" fontWeight={600}>
+                  <Typography variant="body2" sx={{fontWeight:600}}>
                     {contact.firstName} {contact.lastName}
                   </Typography>
                 </Box>
@@ -277,14 +287,18 @@ function MobileCardList({ contacts }: { contacts: ReturnType<typeof useFilteredC
               <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
                 <ContactAvatar firstName={contact.firstName} lastName={contact.lastName} size={44} />
                 <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography variant="body1" fontWeight={700} noWrap>
+                  <Typography variant="body1" sx={{fontWeight:700}}  noWrap>
                     {contact.firstName} {contact.lastName}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" noWrap display="block">
+                  <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
                     {contact.email}
                   </Typography>
                   {contact.company && (
-                    <Typography variant="caption" color="text.secondary" noWrap display="block">
+                    <Typography
+                      variant="caption"
+                      color="text.secondary"
+                      noWrap
+                      sx={{ display: 'block' }}>
                       {contact.company}
                     </Typography>
                   )}
