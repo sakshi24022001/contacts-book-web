@@ -2,6 +2,8 @@
 
 A responsive Contacts Book Single Page Application built with React, TypeScript, Vite, Material UI, and Zustand.
 
+
+
 The application allows users to create, view, update, delete, search, filter, and manage contacts entirely on the client side without a backend.
 
 ---
