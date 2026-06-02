@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Contact } from '../types/contact';
+import type { Contact } from '../types/contact';
 
 // Pure filtering logic, extracted so it can be tested without hooks
 function filterContacts(

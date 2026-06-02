@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { validateContactForm } from '../utils/validation';
-import { ContactFormValues } from '../types/contact';
+import type { ContactFormValues } from '../types/contact';
 
 const BASE_VALUES: ContactFormValues = {
   firstName: 'Priya',
